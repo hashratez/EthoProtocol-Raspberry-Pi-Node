@@ -1,6 +1,10 @@
-# EthoProtocol-Raspberry-Pi-Node
+# How to run an EthoProtocol Node on a Raspberry-Pi 4 (64bit)
 
-##How to run a EthoProtocol Node on a Raspberry Pi 4 64bit##
+This example is for a GATEWAY NODE.  If you wish to run a Master or Service Node please change the node type in the upgrade command line.
+
+This script swaps out a Geth AMD64 binary for a Geth ARM64 during the install
+
+# You must install as ROOT, for some reason there are permission problems if installed with "ether1node" user.
 
 Get the upgrade script from the EthoProtocol Node Dashboard, it will look something like this:
 
