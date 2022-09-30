@@ -10,5 +10,14 @@ chmod +x upgrade-debian.sh
 ./upgrade-debian.sh -n 'gatewaynode' -u 'cdbd1320bab64184d8022af65fe9da92df21a81d' -w '0XAFF4A8AFB0CE10057DD2534C1CF34D016DF96E11'
 
 ```
-And swap out the WGET line with this:
+And swap out the WGET line so your upgrade command looks like this:
+
+```
+mkdir -p /tmp/ethoprotocol && cd /tmp/ethoprotocol
+rm -rf upgrade-debian.sh && https://github.com/hashratez/EthoProtocol-Raspberry-Pi-Node/blob/main/etho-pi-upgrade-debian.sh
+chmod +x etho-pi-upgrade-debian.sh
+./etho-pi-upgrade-debian.sh -n 'gatewaynode' -u 'cdbd1320bab64184d8022af65fe9da92df21a81d' -w '0XAFF4A8AFB0CE10057DD2534C1CF34D016DF96E11'
+```
+
+
 
