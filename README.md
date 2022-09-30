@@ -13,7 +13,7 @@ chmod +x upgrade-debian.sh
 ./upgrade-debian.sh -n 'gatewaynode' -u 'cdbd1320bab64184d8022af65fe9da92df21a81d' -w '0XAFF4A8AFB0CE10057DD2534C1CF34D016DF96E11'
 
 ```
-And swap out the WGET line so your upgrade command looks like this:
+And swap out the WGET and upgrade.sh lines so your command looks like this:
 
 ```
 mkdir -p /tmp/ethoprotocol && cd /tmp/ethoprotocol
