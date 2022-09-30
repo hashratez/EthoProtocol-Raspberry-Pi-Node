@@ -17,7 +17,7 @@ And swap out the WGET and upgrade.sh lines so your command looks like this:
 
 ```
 mkdir -p /tmp/ethoprotocol && cd /tmp/ethoprotocol
-rm -rf etho-pi-upgrade-debian.sh && https://github.com/hashratez/EthoProtocol-Raspberry-Pi-Node/blob/main/etho-pi-upgrade-debian.sh
+rm -rf etho-pi-upgrade-debian.sh && wget https://raw.githubusercontent.com/hashratez/EthoProtocol-Raspberry-Pi-Node/main/etho-pi-upgrade-debian.sh
 chmod +x etho-pi-upgrade-debian.sh
 ./etho-pi-upgrade-debian.sh -n 'gatewaynode' -u 'cdbd1320bab64184d8022af65fe9da92df21a81d' -w '0XAFF4A8AFB0CE10057DD2534C1CF34D016DF96E11'
 ```
