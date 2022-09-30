@@ -5,7 +5,7 @@ This example is for a GATEWAY NODE.  If you wish to run a Master or Service Node
 **You must install the Etho Node as ROOT user, for some reason on an -Ubuntu Pi- there are permission problems if installed with "ether1node" user.**
 
 ###### Step 1
-Prepare your Raspberry Pi with Ubuntu as found on this page:
+Prepare your Raspberry Pi with Ubuntu (20.04 server recommended) as found on this page:
 https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4#1-overview
 
 ###### Step 2
