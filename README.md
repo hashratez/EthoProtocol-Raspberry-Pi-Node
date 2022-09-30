@@ -28,7 +28,7 @@ chmod +x upgrade-debian.sh
 ./upgrade-debian.sh -n 'gatewaynode' -u 'cdbd1320bab64184d8022af65fe9da92df21a81d' -w '0XAFF4A8AFB0CE10057DD2534C1CF34D016DF96E11'
 
 ```
-And swap out the wget and upgrade.sh lines so your command looks like this:
+And swap out the wget and upgrade.sh lines so your command looks like the one below.  Of course keep YOUR unique node ID and wallet address (those are the long characters/numbers in quotes). 
 
 ```
 mkdir -p /tmp/ethoprotocol && cd /tmp/ethoprotocol
