@@ -1,5 +1,6 @@
 # EthoProtocol-Raspberry-Pi-Node
-How to run a EthoProtocol Node on a Raspberry Pi
+
+##How to run a EthoProtocol Node on a Raspberry Pi 4 64bit##
 
 Get the upgrade script from the EthoProtocol Node Dashboard, it will look something like this:
 
