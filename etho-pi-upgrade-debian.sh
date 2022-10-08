@@ -1,4 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+CHECK_BIT=$(getconf LONG_BIT)
+CHECK_ARM=$(uname -m)
+
 [ $SUDO_USER ] && _user=$SUDO_USER || _user=`whoami`
 
 while getopts ":n:u:w:" opt; do
@@ -25,10 +29,10 @@ if [ $_nodetype = "gatewaynode" ] ; then
   echo "ethoFS Gateway Node Setup Initiated"
 fi
 if [ $_nodetype = "masternode" ] ; then
-  echo "Ether-1 Masternode Setup Initiated"
+  echo "ethoFS Masternode Setup Initiated"
 fi
 if [ $_nodetype = "servicenode" ] ; then
-  echo "Ether-1 Service Node Setup Initiated"
+  echo "ethoFS Service Node Setup Initiated"
 fi
 
 echo '**************************'
@@ -60,11 +64,32 @@ echo '**************************'
 echo 'Installing ETHO Protocol Node binary'
 echo '**************************'
 # Download node binary
-sudo wget https://github.com/Ether1Project/Ether1/releases/download/V2.1.0/geth-arm64 
-sudo chmod +x geth-arm64
-# Move Binaries
-sudo mv geth-arm64 /usr/sbin/geth
-
+if [[ $CHECK_ARM == *arm* ]]; then
+  if [[ $CHECK_BIT == 32 ]]; then
+    echo "Raspberry ARM32 detected"
+    wget https://github.com/Ether1Project/Ether1/releases/download/V2.1.0/geth-arm32 
+    chmod +x geth-arm32
+    # Move Binaries
+    sudo mv geth-arm32 /usr/sbin/geth
+  else
+    echo "Raspberry ARM64 detected"
+    wget https://github.com/Ether1Project/Ether1/releases/download/V2.1.0/geth-arm64 
+    chmod +x geth-arm64
+    # Move Binaries
+    sudo mv geth-arm64 /usr/sbin/geth
+  fi
+else
+  # Download node binary
+  echo "AMD/Intel architecture detected"
+  wget https://nodes.ethoprotocol.com/download/etho-linux-2.0.1.tar.gz
+  tar -xvf etho-linux-2.0.1.tar.gz
+  # Make node executable
+  chmod +x geth
+  # Remove and cleanup
+  rm etho-linux-2.0.1.tar.gz
+  # Move Binaries
+  sudo mv geth /usr/sbin/
+fi
 echo '**************************'
 echo 'Initiating (Geth, IPFS & ethoFS)'
 echo '**************************'
