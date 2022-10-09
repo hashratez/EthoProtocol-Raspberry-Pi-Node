@@ -64,7 +64,7 @@ echo '**************************'
 echo 'Installing ETHO Protocol Node binary'
 echo '**************************'
 # Download node binary
-if [[ $CHECK_ARM == *arm* ]]; then
+if [[ $CHECK_ARM == *arm* ]] || [[ $CHECK_ARM == *aarch* ]]; then
   if [[ $CHECK_BIT == 32 ]]; then
     echo "Raspberry ARM32 detected"
     wget https://github.com/Ether1Project/Ether1/releases/download/V2.1.0/geth-arm32 
